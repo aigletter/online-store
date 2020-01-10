@@ -1,0 +1,13 @@
+.header {
+    height: 60px;
+    background-color: antiquewhite;
+}
+
+.footer {
+    height: 100px;
+    background-color: aquamarine;
+}
+
+.content {
+    min-height: 300px;
+}
