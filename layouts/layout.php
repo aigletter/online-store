@@ -16,7 +16,7 @@
         <?php include "header.php"; ?>
 
         <div class="content">
-            <?php include $view; ?>
+            <?php include $viewFile; ?>
         </div>
 
         <?php include 'footer.php' ?>

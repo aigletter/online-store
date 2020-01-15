@@ -2,6 +2,6 @@
 
 $categories = getItems("SELECT * FROM categories");
 
-print_r($categories);
-
-view('home');
+view('home', [
+    'categories' => $categories
+]);
