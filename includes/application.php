@@ -1,6 +1,7 @@
 <?php
 
 include 'render.php';
+include 'database.php';
 
 function run($config) {
     global $app;
