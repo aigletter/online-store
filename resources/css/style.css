@@ -11,3 +11,18 @@
 .content {
     min-height: 300px;
 }
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 10px;
+}
