@@ -40,3 +40,7 @@ function config($name) {
 
     return null;
 }
+
+function redirect($url) {
+    header("Location: " . $url);
+}
