@@ -1,5 +1,9 @@
 <?php
 
+//ini_set('display_errors', 1);
+
 include 'includes' . DIRECTORY_SEPARATOR . 'application.php';
 
-runApplication();
+$config = include 'config/main.php';
+
+run($config);

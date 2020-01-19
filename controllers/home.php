@@ -1,3 +1,7 @@
 <?php
 
-view('home');
+$categories = getItems("SELECT * FROM categories");
+
+view('home', [
+    'categories' => $categories
+]);

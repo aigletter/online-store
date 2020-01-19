@@ -1,8 +1,21 @@
 <?php
 
 include 'render.php';
+include 'database.php';
 
-function runApplication() {
+include 'models/category.php';
+include 'models/product.php';
+
+function run($config) {
+    global $app;
+    $app['config'] = $config;
+
+    $controllerFile = route();
+
+    include $controllerFile;
+}
+
+function route() {
     $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
     $path = explode('/', $url);
@@ -16,5 +29,18 @@ function runApplication() {
             . '404.php';
     }
 
-    include $controllerFile;
+    return $controllerFile;
+}
+
+function config($name) {
+    global $app;
+    if (array_key_exists($name, $app['config'])) {
+        return $app['config'][$name];
+    }
+
+    return null;
+}
+
+function redirect($url) {
+    header("Location: " . $url);
 }

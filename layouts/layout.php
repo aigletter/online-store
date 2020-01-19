@@ -12,12 +12,14 @@
     <link type="text/css" rel="stylesheet" href="/resources/css/style.css">
 </head>
 <body>
-    <?php include "header.php"; ?>
+    <div class="container">
+        <?php include "header.php"; ?>
 
-    <div class="content">
-        <?php include $view; ?>
+        <div class="content">
+            <?php include $viewFile; ?>
+        </div>
+
+        <?php include 'footer.php' ?>
     </div>
-
-    <?php include 'footer.php' ?>
 </body>
 </html>
