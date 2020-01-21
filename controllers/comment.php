@@ -10,12 +10,3 @@
     header("Location: ".$_SERVER["HTTP_REFERER"]);
 ?>
 
-<?php
-    $page_id = 150;
-    $mysqli = new mysqli("localhost", "root", "Kipper88", "shop");
-    $result_set = $mysqli->query("SELECT * FROM  `comments` WHERE `page_id`='$page_id'");
-    while ($row = $result_set->fetch_assoc()) {
-        print_r($row);
-        echo "<br />";
-    }
-?>
