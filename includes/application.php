@@ -44,3 +44,27 @@ function config($name) {
 function redirect($url) {
     header("Location: " . $url);
 }
+
+function filterInput($input){
+    $input = trim($input);
+    $input = stripslashes($input);
+    $input = strip_tags($input);
+    $input = htmlspecialchars($input);
+     $input=mysqli_real_escape_string(getDbConnection(), $input);
+    return $input;
+}
+
+function validateString($input, $min=2, $max=32){
+    if (empty($input) || strlen($input) < $min || strlen($input) > $max) {
+        return false ;
+    }else{
+        return true;
+    }
+};
+function ifError($input_data){
+    if (count($errors) < 0) {
+        echo $input_data;
+    };
+    return $input_data;
+
+}

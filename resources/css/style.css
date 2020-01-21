@@ -150,3 +150,15 @@ button.buy {
     display: inline-block;
     margin-right: 6px;
 }
+.reg_a{
+    margin-left: 700px;
+}
+.registration_block {
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 222px;
+    margin: 0 auto;
+    text-align: center;
+    position: center;
+}
