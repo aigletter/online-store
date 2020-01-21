@@ -30,3 +30,13 @@ function getItem($query) {
 
     return null;
 }
+
+function putItem($query) {
+    $link = getDbConnection();
+    $result = mysqli_query($link, $query);
+    if ($result) {
+        return true;
+    }
+
+    return false;
+}

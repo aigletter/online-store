@@ -150,3 +150,10 @@ button.buy {
     display: inline-block;
     margin-right: 6px;
 }
+.photo {
+    text-align: right;
+    max-height: 5px;
+}
+img {
+    max-height: 250px;
+}
