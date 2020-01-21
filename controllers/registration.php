@@ -40,7 +40,7 @@ mysqli_query($link, "START TRANSACTION");
             $resultUser = mysqli_query($link, $query);
 
             if ($resultUser) {
-                echo 'User insert ok';
+                echo 'Пользователь успешно зарегистрирован!';
                 mysqli_commit($link);
             } else {
                 echo 'User insert error';
