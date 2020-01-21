@@ -9,4 +9,8 @@ global $app;
         </li>
         <?php endforeach; ?>
     </ul>
+    <div class="cart">
+        <a href="cart"><i class="fa fa-cart-plus"></i></a>
+    </div>
+
 </div>
