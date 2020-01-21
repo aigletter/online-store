@@ -5,6 +5,7 @@ include 'database.php';
 
 include 'models/category.php';
 include 'models/product.php';
+include 'models/addproduct.php';
 
 function run($config) {
     global $app;
