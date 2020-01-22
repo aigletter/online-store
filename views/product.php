@@ -32,7 +32,7 @@ $breadCrumbs = breadCrumbs([
 </div>
 
 <form name="comment" action="comment" method="POST">
-    <title>Оставьте комментарий</title>
+    <h1>Оставь комментарий</h1>
         <p>Имя:</p>
         <input type="text" name="name" style="display: block"/>
         <p>Комментарии:</p>
