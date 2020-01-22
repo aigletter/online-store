@@ -24,3 +24,7 @@ function countProductsByCategory($categoryId) {
 function getProduct($id) {
     return getItem("SELECT * FROM products WHERE id = " . $id);
 }
+
+function getProducts($ids) {
+    return getItems("SELECT * FROM products WHERE id IN(" . implode(',', $ids) . ")");
+}
