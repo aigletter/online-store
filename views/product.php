@@ -22,7 +22,7 @@ $breadCrumbs = breadCrumbs([
         <div class="product-content">
             <div class="product-price">
                 <span><?php echo number_format($product['price'], 0, ',', ' ') ?></span>
-                <a href="recyclebin?id=<?php print_r($_GET['id']) ?>"><button class="buy">Купить</button></a>
+                <a href="recyclebin?id=<?php echo $_GET['id'] ?>"><button class="buy">Купить</button></a>
             </div>
             <div class="product-description">
                 <?php echo $product['description'] ?>
