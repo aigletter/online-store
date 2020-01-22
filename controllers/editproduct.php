@@ -26,7 +26,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $inputProduct = filterInput($_POST['product']);
     $inputProductname = filterInput($_POST['productname']);
     $inputPrice = filterInput($_POST['price']);
-    $inputSpecification = filterInput($_POST['specification']);}
+    $inputSpecification = filterInput($_POST['specification']);
+    $inputCountry = filterInput($_POST['country']);
+    $inputNumber = filterInput($_POST['number']);}
 
 $add = [];
 $adderrors = [];
@@ -44,6 +46,12 @@ else $adderrors['specification'] = $inputSpecification;
 
 if (validatePrise($inputPrice)) $add['priсe'] = $inputPrice;
 else $adderrors['priсe'] = $inputPrice;
+
+if (validateNumber($inputNumber)) $add['number'] = $inputNumber;
+else $adderrors['number'] = $inputNumber;
+
+if (validateCountry($inputCountry)) $add['country'] = $inputCountry;
+else $adderrors['country'] = $inputCountry;
 
 if(uploadFile()) $add['photo'] = "uploads/" . $_FILES["avatar"]["name"];
 else $adderrors['photo'] = "uploads/" . $_FILES["avatar"]["name"];;
@@ -64,6 +72,8 @@ $pass['productname'] = array_key_exists('product', $add) ? $getproduct['name'] :
 $pass['specification'] = array_key_exists('product', $add) ? $getproduct['description'] : ' ';
 $pass['price'] =  array_key_exists('product', $add) ? $getproduct['price'] : ' ';
 $pass['avatar'] = array_key_exists('product', $add) ? $getproduct['image'] : ' ';
+$pass['number'] =  array_key_exists('product', $add) ? $getproduct['number'] : ' ';
+$pass['country'] =  array_key_exists('product', $add) ? $getproduct['country'] : ' ';
 
 
 if(!empty($add['productname']))
@@ -85,6 +95,15 @@ if(!empty($add['photo']))
     $res4 = putItem("UPDATE products SET image = '{$add['photo']}'
 WHERE id = '{$add['product']}'");
 if($res4) $messages['photo'] = 'Фото успешно обновлено';
+
+if(!empty($add['country']))
+    $res5 = putItem("UPDATE products SET country = '{$add['country']}'
+WHERE id = '{$add['product']}'");
+if($res5) $messages['country'] = 'Страна-производитель товара успешно обновлена';
+
+$res6 = putItem("UPDATE products SET number = '{$add['number']}'
+WHERE id = '{$add['product']}'");
+if($res6) $messages['number'] = 'Количество товара успешно обновлено';
 
 view('editproduct',[
     'passcategory' => $passcategory,

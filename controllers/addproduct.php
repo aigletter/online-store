@@ -14,7 +14,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $inputCategory = filterInput($_POST['category']);
     $inputProductname = filterInput($_POST['productname']);
     $inputPrise = filterInput($_POST['prise']);
-    $inputSpecification = filterInput($_POST['specification']);}
+    $inputSpecification = filterInput($_POST['specification']);
+    $inputCountry = filterInput($_POST['country']);
+    $inputNumber = filterInput($_POST['number']);}
 
 $add = [];
 $adderrors = [];
@@ -31,6 +33,12 @@ else $adderrors['specification'] = $inputSpecification;
 if (validatePrise($inputPrise)) $add['prise'] = $inputPrise;
 else $adderrors['prise'] = $inputPrise;
 
+if (validateNumber($inputNumber)) $add['number'] = $inputNumber;
+else $adderrors['number'] = $inputNumber;
+
+if (validateCountry($inputCountry)) $add['country'] = $inputCountry;
+else $adderrors['country'] = $inputCountry;
+
 if(uploadFile()) $add['photo'] = "uploads/" . $_FILES["avatar"]["name"];
 else $adderrors['photo'] = "uploads/" . $_FILES["avatar"]["name"];;
 
@@ -38,8 +46,9 @@ else $adderrors['photo'] = "uploads/" . $_FILES["avatar"]["name"];;
 //print_r($adderrors);
 
 if(empty($adderrors)) {
-    $res = putItem("INSERT INTO products (category_id, name, description, price, image)
-VALUES( '{$add['category']}', '{$add['productname']}', '{$add['specification']}', '{$add['prise']}', '{$add['photo']}')");
+    $res = putItem("INSERT INTO products (category_id, name, description, price, image, country, number)
+VALUES( '{$add['category']}', '{$add['productname']}', '{$add['specification']}', '{$add['prise']}', '{$add['photo']}',
+       '{$add['country']}', '{$add['prise']}')");
 }
 if($res) $messages['add'] = "Товар успешно добавлен"; else  $messages['add'] ="Товар не добавлен,
 некорректные данные либо введены не полностью";

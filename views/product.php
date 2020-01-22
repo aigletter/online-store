@@ -24,9 +24,14 @@ $breadCrumbs = breadCrumbs([
                 <span><?php echo number_format($product['price'], 0, ',', ' ') ?></span>
                 <button class="buy">Купить</button>
             </div>
+            <div class="product-country">
+                Страна производитель: <?php echo $product['country'] ?>
+            </div>
+            <div class="product-number">
+                Количество: <?php echo $product['number'] ?>
+            </div>
             <div class="product-description">
                 <?php echo $product['description'] ?>
-            </div>
         </div>
     </div>
 </div>

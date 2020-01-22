@@ -25,6 +25,14 @@
     <br>
     <textarea name="specification" cols="36" rows="8"></textarea>
     <br>
+    <lablel>Страна-производитель</lablel>
+    <br>
+    <input name="country">
+    <br>
+    <lablel>Количество товара</lablel>
+    <br>
+    <input name="number">
+    <br>
     <input type="file" name="avatar">
     <button type="submit" name="upload">Отправить</button>
 </form>

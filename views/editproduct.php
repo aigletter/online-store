@@ -50,6 +50,14 @@
     Текст действующего описания находится ниже"
               cols="36" rows="8"></textarea>
     <br>
+    <lablel>Страна-производитель</lablel>
+    <br>
+    <input name="country" value="<?php echo $pass['country']?>">
+    <br>
+    <lablel>Количество товара</lablel>
+    <br>
+    <input name="number" value="<?php echo $pass['number']?>">
+    <br>
     <input type="file" name="avatar">
     <button type="submit" name="upload">Отправить</button>
 </form>

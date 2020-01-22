@@ -68,3 +68,8 @@ INSERT INTO `products` (`id`, `category_id`, `name`, `description`, `price`, `im
 (42,	1,	'Ноутбук HP Pavilion Gaming 15-cx0038ua',	'<p>Уверенность и комфорт при выполнении повседневных задач. Что бы вам ни приходилось делать на ноутбуке — отправлять сообщения, фотографии, выполнять платежи, прослушивать музыку, этот надежный ноутбук — теперь с более тонким легким корпусом — выполняет все это день за днем.</p>',	26000,	'uploads/copy_hp_pavilion_15_8kr18ea_5db02802d5a4f_images_14634594071.jpg');
 
 -- 2020-01-17 18:19:51
+ALTER TABLE `products`
+ADD `country` varchar(255) DEFAULT NULL
+
+ALTER TABLE `products`
+ADD  `number` int(11) NOT NULL DEFAULT 0  ;

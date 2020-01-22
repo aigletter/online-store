@@ -36,6 +36,22 @@ function validatePrise($var)
     return false;
 }
 
+function validateCountry($var)
+{
+    if (preg_match('/^[А-Яа-яA-Z\s\(\)]{3,120}$/u', $var)) {
+        return true;
+    }
+    return false;
+}
+
+function validateNumber($var)
+{
+    if (preg_match('/^[0-9]{1,10}$/u', $var)) {
+        return true;
+    }
+    return false;
+}
+
 
 function uploadFile()
 {
