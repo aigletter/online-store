@@ -38,8 +38,22 @@ $breadCrumbs = breadCrumbs([
         <p>Комментарии:</p>
         <br />
         <textarea name="comment" cols="40" rows="10"></textarea>
-        <input type="hidden" name="product_id"/>
+        <input type="hidden" name="product_id" value="<?php echo $_GET['id'] ?>" />
+        <br><br>
         <input type="submit" name="buttom" value="Отправить"/>
 </form>
 
+<div class="comments">
+    <br><br><br>
+    <h4>Комментарии пользователей</h4>
+    <?php foreach ($comments as $comment): ?>
+        <div>
+            <div>Пользователь: <?php echo $comment['name'] ?></div>
+            <div><?php echo $comment['comment'] ?></div>
+        </div>
+        <br>
+        <hr>
+        <br>
+    <?php endforeach; ?>
+</div>
 
