@@ -8,9 +8,14 @@ global $app;
             <a href="<?php echo $menu['url'] ?>"><?php echo $menu['title'] ?></a>
         </li>
         <?php endforeach; ?>
-        <li class="reg_a">
-            <a href="/registration" >Зарегистрироваться</a>
-        </li>
+        <?php if (!checkUserData()): ?>
+            <li class="reg_a">
+                <a href="/registration" >Зарегистрироваться</a>
+            </li>
+            <li>
+                <a href="/login">Войти</a>
+            </li>
+        <?php endif; ?>
     </ul>
 
 </div>
