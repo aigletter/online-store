@@ -5,6 +5,7 @@ include 'database.php';
 
 include 'models/category.php';
 include 'models/product.php';
+include 'models/user.php';
 
 function run($config) {
     global $app;
@@ -61,7 +62,7 @@ function validateString($input, $min=2, $max=32){
         return true;
     }
 };
-function ifError($input_data){
+function ifError($input_data, $errors=[]){
     if (count($errors) < 0) {
         echo $input_data;
     };

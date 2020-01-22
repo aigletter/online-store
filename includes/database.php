@@ -30,3 +30,9 @@ function getItem($query) {
 
     return null;
 }
+
+function query($query) {
+    $link = getDbConnection();
+    $result = mysqli_query($link, $query);
+    return $result;
+}
