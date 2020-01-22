@@ -6,12 +6,16 @@ include 'database.php';
 include 'models/category.php';
 include 'models/product.php';
 
+
+include 'includes/authorization.php';
+
 function run($config) {
     global $app;
+
+    session_start();
+
     $app['config'] = $config;
-
     $controllerFile = route();
-
     include $controllerFile;
 }
 
