@@ -4,10 +4,15 @@ session_start ();
 
 $id = $_GET['id'];
 
-$_SESSION["cart"] = [
-    "id" => $id
-];
+$_SESSION['cart'][] = $id;
 
-echo $_SESSION["cart"]["id"];
 
-//print_r($id);
+/*$_SESSION["cart"] = [
+    'id' => $id
+];*/
+redirect('/product?id=' . $id);
+
+//echo session_id();
+//echo session_name();
+//echo session_status();
+
