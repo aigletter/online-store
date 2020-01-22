@@ -30,19 +30,16 @@ $breadCrumbs = breadCrumbs([
         </div>
     </div>
 </div>
-<title>
-    <form name="comment" action="comment.php" method="post">
-        <p>
-            <label>Имя:</label>
-            <input> type="text" name="name" />
-        </p>
-        <p>
-            <label>Комментарии:</label>
-            <br />
-            <textarea name="text_comment" cols="30" rows="50"></textarea>
-        </p>
-        <p>
-            <input> type="submit" value="Отправить" />
-        </p>
-    </form>
-</title>
+
+<form name="comment" action="comment" method="POST">
+    <title>Оставьте комментарий</title>
+        <p>Имя:</p>
+        <input type="text" name="name" style="display: block"/>
+        <p>Комментарии:</p>
+        <br />
+        <textarea name="comment" cols="40" rows="10"></textarea>
+        <input type="hidden" name="product_id"/>
+        <input type="submit" name="buttom" value="Отправить"/>
+</form>
+
+
