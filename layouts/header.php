@@ -16,6 +16,15 @@ global $app;
                 <a href="/login">Войти</a>
             </li>
         <?php endif; ?>
+        <?php if (checkUserData()): ?>
+            <li class="reg_a">
+                <a href="/profile" ><?php echo $_SESSION['user_data']['login']?></a>
+            </li>
+            <li>
+                <a href="/exit">Выйти</a>
+            </li>
+        <?php endif; ?>
+
     </ul>
     <div class="cart">
         <a href="cart"><i class="fa fa-cart-plus"></i></a>

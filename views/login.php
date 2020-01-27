@@ -1,6 +1,3 @@
-<?php 
-
-?>
 <html>
 <head>
 <title>Form</title>
@@ -18,8 +15,8 @@
 <br><br>
 <input type="submit">
 </form>
-<?php 
+<?php /*
 echo $message;
-?>
+*/?>
 </body>
 </html>

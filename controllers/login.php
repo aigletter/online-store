@@ -16,6 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "Ви не авторизувалися";
     }
 }//echo '<pre>'; print_r($_SESSION); echo '</pre>';	
-view('form', ['message' => $message]);
+view('login', ['message' => $message]);
 
-?>
+
